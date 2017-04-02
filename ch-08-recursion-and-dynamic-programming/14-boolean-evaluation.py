@@ -15,14 +15,14 @@ def count_eval(expr, value, memo=None):
   for opix in xrange(1, len(expr) - 1, 2):
     left, op, right = expr[:opix], expr[opix], expr[(opix+1):]
     if op == '&':
-      true_count += count_eval(left,True,memo) * count_eval(right,True,memo)
+      true_count += count_eval(left,True, memo) * count_eval(right,True, memo)
     elif op == '|':
-      true_count += count_eval(left,True,memo) * count_eval(right,True,memo)
-      true_count += count_eval(left,False,memo) * count_eval(right,True,memo)
-      true_count += count_eval(left,True,memo) * count_eval(right,False,memo)
+      true_count += count_eval(left,True, memo) * count_eval(right,True, memo)
+      true_count += count_eval(left,False,memo) * count_eval(right,True, memo)
+      true_count += count_eval(left,True, memo) * count_eval(right,False,memo)
     elif op == '^':
-      true_count += count_eval(left,True,memo) * count_eval(right,False,memo)
-      true_count += count_eval(left,False,memo) * count_eval(right,True,memo)
+      true_count += count_eval(left,True, memo) * count_eval(right,False,memo)
+      true_count += count_eval(left,False,memo) * count_eval(right,True, memo)
     else:
       return Exception('Unknown operation.')
   total_count = catalan_number((len(expr) - 1) / 2)

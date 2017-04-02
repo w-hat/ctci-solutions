@@ -17,9 +17,7 @@ def rotate_matrix(m):
 def rotate_matrix_in_place(m):
   n = len(m)
   for col in xrange(n/2):
-    print("col:", col)
     for row in xrange(col, n - col - 1):
-      print("row:", row)
       temp1 = m[n - col - 1][row]
       m[n - col - 1][row] = m[row][col]
       temp2 = m[n - row - 1][n - col - 1]

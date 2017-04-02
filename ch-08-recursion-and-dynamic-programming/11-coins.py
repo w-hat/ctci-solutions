@@ -16,11 +16,7 @@ def coins1_pnd(cents):
 
 def coins2(cents):
   n = cents / 5
-  count  = n * n * n / 60.0
-  count += n * n * 9 / 40.0
-  count += n * 53 / 60.0
-  count += 61 / 240.0
-  return int(count + 1)
+  return int(n*n*n/60.0 + n*n*9/40.0 + n*53/60.0 + 301/240.0)
 
 import unittest
 

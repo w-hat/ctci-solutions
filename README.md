@@ -12,6 +12,6 @@ Problem 4 allows you to park cars, and problem 8 provides a simple Othello bot.
 You can play against the Othello bot with `python 08-othello.py play`.
 Good luck!
 
-Some of these solutions may be algorithmically slower than the official
+Some of these solutions may be asymptotically slower than the official
 solutions.  Please report any errors you find!  At least one (8.11 `coins2`)
-is algorithmically faster than the solution given in the book.
+is asymptotically faster than the solution given in the book.

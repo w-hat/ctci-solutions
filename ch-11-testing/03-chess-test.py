@@ -245,7 +245,7 @@ class ChessBoard(object):
     self.bits[EMPTY] ^= from_bit
     self.bits[to_bit_piece] ^= to_bit
     self.side ^= 1
-    # TODO Castling and en passant and promotion repetition.
+    # TODO Castling and en passant and promotion and repetition.
   
   def __eq__(self, other):
     return self.side == other.side and self.bits == other.bits
