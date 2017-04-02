@@ -1,0 +1,10 @@
+<project default="compile">
+  <target name="clean">
+    <delete file="RandoSet.class"/>
+  </target>
+  <target name="compile">
+    <mkdir dir="."/>
+    <javac srcdir="." destdir="."/>
+  </target>
+</project>
+
