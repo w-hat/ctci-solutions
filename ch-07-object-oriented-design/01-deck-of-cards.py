@@ -9,7 +9,7 @@ class CardDeck():
   
   def shuffle(self):
     for i in xrange(len(self.cards)):
-      o = random.randint(len(self.cards))
+      o = random.randint(i)
       self.cards[i], self.cards[o] = self.cards[o], self.cards[i]
   
   def draw_card(self):
