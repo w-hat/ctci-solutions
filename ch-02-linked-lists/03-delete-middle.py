@@ -5,7 +5,7 @@ import unittest
 def delete_middle(node):
   next = node.next
   node.data = next.data
-  node.next = node.next
+  node.next = next.next
 
 class Node():
   def __init__(self, data, next=None):
