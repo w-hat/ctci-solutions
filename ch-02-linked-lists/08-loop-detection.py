@@ -3,7 +3,8 @@
 import unittest
 
 def detect_cycle_without_dict(head):
-  slow, fast = head
+  slow = head
+  fast = head
   
   while fast and fast.next:
     slow = slow.next
