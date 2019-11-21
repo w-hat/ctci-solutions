@@ -13,7 +13,6 @@ def zero_out_row_col(mat):
       if mat[r][c] == 0:
         zero_rows.append(r)
         zero_cols.append(c)
-        break
   for r in zero_rows:
     for c in xrange(m):
       mat[r][c] = 0
