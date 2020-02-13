@@ -15,10 +15,11 @@ def build_order(projects, dependencies):
   while queue.is_not_empty():
     node = queue.remove()
     build_order.append(node.data)
-    for dependent in node.edges:
-      dependent.dependencies_left -= 1
-      if not dependent.dependencies_left:
-        queue.add(dependent)
+    for project in projects:
+      if node in nodes[project].edges:
+        nodes[project].dependencies_left -= 1
+        if not nodes[project].dependencies_left:
+          queue.append(nodes[project])
   if len(build_order) < len(projects):
     return Exception("Cycle detected")
   return build_order
@@ -47,13 +48,13 @@ class Test(unittest.TestCase):
     dependencies1 = [("C", "A"), ("B", "A"), ("F", "A"), ("F", "B"), ("F", "C"),
         ("A", "E"), ("B", "E"), ("D", "G")]
     self.assertEqual(build_order(projects, dependencies1),
-        ["D", "F", "G", "B", "C", "A", "E"])
+        ["E", "G", "A", "D", "B", "C", "F"])
     dependencies2 = [("A", "B"), ("B", "C"), ("C", "D"), ("D", "A")]
     self.assertEqual(build_order(projects, dependencies2).__class__, Exception)
     dependencies3 = [("A", "B"), ("A", "C"), ("E", "A"), ("E", "B"), ("A", "F"),
         ("B", "F"), ("C", "F"), ("G", "D")]
     self.assertEqual(build_order(projects, dependencies3),
-        ["E", "G", "A", "D", "B", "C", "F"])
+        ["D", "F", "G", "B", "C", "A", "E"]))
 
 if __name__ == "__main__":
   unittest.main()
