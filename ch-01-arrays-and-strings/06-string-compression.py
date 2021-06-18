@@ -8,7 +8,7 @@ def compress(string):
   parts = []
   current_letter = string[0]
   current_count = 1
-  for letter in string[1:]:
+  for letter in string[1]:
     if current_letter == letter:
       current_count += 1
     else:
