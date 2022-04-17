@@ -6,7 +6,7 @@ def one_away(str1, str2):
     return False
   elif len_diff == 0:
     difference_count = 0
-    for i in xrange(len(str1)):
+    for i in range(len(str1)):
       if str1[i] != str2[i]:
         difference_count += 1
         if difference_count > 1:
@@ -18,7 +18,7 @@ def one_away(str1, str2):
     else:
       longer, shorter = str2, str1
     shift = 0
-    for i in xrange(len(shorter)):
+    for i in range(len(shorter)):
       if shorter[i] != longer[i + shift]:
         if shift or (shorter[i] != longer[i + 1]):
           return False
